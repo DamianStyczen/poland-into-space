@@ -1,0 +1,24 @@
+{
+  "tourists": [
+    {
+      "id": 1,
+      "first-name": "Jan",
+      "last-name": "Nowak",
+      "gender": "Male",
+      "country": "Poland",
+      "remarks": "None",
+      "date-of-birth": "01-01-1960",
+      "list-of-flights": ""
+    }
+  ],
+  "flights": [
+    {
+      "id": 1,
+      "departure-date-and-time": "01-01-2018 20:00",
+      "arrival-date-and-time": "02-01-2018 06:00",
+      "no-of-seats": "Male",
+      "list-of-tourists": "Poland",
+      "ticket-price": "None"
+    }
+  ]
+}
