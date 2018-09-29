@@ -6,7 +6,7 @@ export default class TouristsTable extends React.Component {
         const { tourists } = this.props;
 
         return (
-            <table className="touristsTable">
+            <table className="table">
                 <thead>
                     <tr>
                         <th>Last name</th>

@@ -1,6 +1,7 @@
 import React from "react";
-import TouristsTable from "../TouristsTable/ToursitsTable";
+import { Link } from 'react-router-dom';
 import { HOST } from '../../constants';
+import TouristsTable from "../../components/TouristsTable/ToursitsTable";
 
 export default class TouristsList extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export default class TouristsList extends React.Component {
     render() {
         return (
             <div>
+                <Link to='/create'>Dodaj turystę</Link>
                 <TouristsTable tourists={this.state.tourists} />
 
             </div>

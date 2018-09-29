@@ -6,18 +6,20 @@ import {
   Switch,
   NavLink,
 } from 'react-router-dom';
-import TouristDetails from "../../components/TouristDetails/TouristDetails";
-import TouristsList from "../../components/TouristsList/TouristsList";
+import TouristDetails from "../../pages/TouristDetails/TouristDetails";
+import TouristsList from "../../pages/TouristsList/TouristsList";
+import NewTourist from "../NewTourist/NewTourist";
 
 class AppPage extends React.Component {
   render() {
     return (
-      <div>
-        <h1>Poland Into Space!</h1>
+      <div className="container">
+        <h1 className="text-center">Poland Into Space!</h1>
         <HashRouter>
           <div>
             <Route exact path='/' component={TouristsList} />
             <Route path='/details/:id' component={TouristDetails} />
+            <Route path='/create' component={NewTourist} />
           </div>
         </HashRouter>
       </div>

@@ -29,6 +29,27 @@
       "remarks": "None",
       "dateOfBirth": "12-06-1963",
       "listOfFlights": ""
+    },
+    {
+      "id": 4
+    },
+    {
+      "firstName": "Damian",
+      "lastName": "Dziedzic",
+      "gender": "male",
+      "country": "Polska",
+      "remarks": "dfsadfasdas",
+      "dateOfBirth": "3232-03-31",
+      "id": 5
+    },
+    {
+      "firstName": "Kobieta",
+      "lastName": "Kobieta",
+      "gender": "female",
+      "country": "Poland",
+      "remarks": "Popopopopo",
+      "dateOfBirth": "1222-12-12",
+      "id": 6
     }
   ],
   "flights": [
