@@ -1,15 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { HOST } from '../../constants';
-import TouristsTable from "../../components/TouristsTable/ToursitsTable";
+import TouristsTable from "../../components/TouristsTable/TouristsTable";
 
 export default class TouristsList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tourists: [],
-            detailsWindow: false,
-            detailsId: -1
+            tourists: []
         };
     }
 

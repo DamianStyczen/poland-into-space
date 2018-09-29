@@ -10,6 +10,7 @@ import TouristDetails from "../../pages/TouristDetails/TouristDetails";
 import TouristsList from "../../pages/TouristsList/TouristsList";
 import NewTourist from "../NewTourist/NewTourist";
 import EditTourist from "../EditTourist/EditTourist";
+import FlightsList from "../../pages/FlightsList/FlightsList";
 
 class AppPage extends React.Component {
   render() {
@@ -22,6 +23,7 @@ class AppPage extends React.Component {
             <Route path='/details/:id' component={TouristDetails} />
             <Route path='/create' component={NewTourist} />
             <Route path='/edit/:id' component={EditTourist} />
+            <Route path='/flights' component={FlightsList} />
           </div>
         </HashRouter>
       </div>
