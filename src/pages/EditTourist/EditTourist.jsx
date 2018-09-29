@@ -11,13 +11,29 @@ export default class NewTourist extends React.Component {
         dateOfBirth: ""
     }
 
+    componentDidMount() {
+        const { id } = this.props.match.params;
 
+        fetch(`${HOST}/tourists/${id}`)
+            .then(res => res.json())
+            .then(tourist => {
+                this.setState({
+                    firstName: tourist.firstName,
+                    lastName: tourist.lastName,
+                    gender: tourist.gender,
+                    country: tourist.country,
+                    remarks: tourist.remarks,
+                    dateOfBirth: tourist.dateOfBirth
+                });
+            });
+    }
     onSubmit = e => {
         e.preventDefault();
 
+        const { id } = this.props.match.params;
 
-        fetch(`${HOST}/tourists`, {
-            method: "POST",
+        fetch(`${HOST}/tourists/${id}`, {
+            method: "PUT",
             headers: {
                 "Content-Type": "application/json; charset=utf-8"
             },
@@ -50,10 +66,10 @@ export default class NewTourist extends React.Component {
                 </div>
                 <div className="form-group">
                     <div className="radio">
-                        <label><input type="radio" id="male" name="gender" defaultChecked={this.state.gender === "male"} />Male</label>
+                        <label><input type="radio" id="male" name="gender" checked={this.state.gender === "male"} />Male</label>
                     </div>
                     <div className="radio">
-                        <label><input type="radio" id="female" name="gender" defaultChecked={this.state.gender === "female"} />Female</label>
+                        <label><input type="radio" id="female" name="gender" checked={this.state.gender === "female"} />Female</label>
                     </div>
                 </div>
                 <div className="form-group">

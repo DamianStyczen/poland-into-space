@@ -17,18 +17,19 @@ export default class TouristsList extends React.Component {
         return (
             <div>
                 <Link to='/create'>Dodaj turystę</Link>
-                <TouristsTable tourists={this.state.tourists} />
+                <TouristsTable tourists={this.state.tourists} onDelete={this.onDelete} />
 
             </div>
         );
     }
-    handleClick = (event, id) => {
-        console.log("clicked", id);
-        this.setState({
-            detailsId: id,
-            detailsWindow: true
-        });
-    };
+    onDelete = id => {
+        fetch(`${HOST}/tourists/${id}`, {
+            method: "DELETE"
+        }).then(() => {
+            this.setState({ tourists: this.state.tourists.filter(t => t.id !== id) });
+        })
+
+    }
     componentDidMount() {
         fetch(`${HOST}/tourists`)
             .then(resp => resp.json())

@@ -1,55 +1,22 @@
 {
   "tourists": [
     {
-      "id": 1,
-      "firstName": "Jan",
-      "lastName": "Nowak",
-      "gender": "Male",
-      "country": "Poland",
-      "remarks": "None",
-      "dateOfBirth": "01-01-1960",
-      "listOfFlights": ""
-    },
-    {
-      "id": 2,
-      "firstName": "Adam",
-      "lastName": "Smith",
-      "gender": "Male",
-      "country": "USA",
-      "remarks": "None",
-      "dateOfBirth": "03-06-1972",
-      "listOfFlights": ""
-    },
-    {
-      "id": 3,
-      "firstName": "Ewa",
-      "lastName": "Kowalczyk",
-      "gender": "Female",
-      "country": "Poland",
-      "remarks": "None",
-      "dateOfBirth": "12-06-1963",
-      "listOfFlights": ""
-    },
-    {
-      "id": 4
-    },
-    {
       "firstName": "Damian",
-      "lastName": "Dziedzic",
+      "lastName": "Styczeń",
+      "gender": "female",
+      "country": "Polska",
+      "remarks": "111",
+      "dateOfBirth": "0001-11-11",
+      "id": 1
+    },
+    {
+      "firstName": "Dziedzicka",
+      "lastName": "Karol",
       "gender": "male",
       "country": "Polska",
-      "remarks": "dfsadfasdas",
-      "dateOfBirth": "3232-03-31",
-      "id": 5
-    },
-    {
-      "firstName": "Kobieta",
-      "lastName": "Kobieta",
-      "gender": "female",
-      "country": "Poland",
-      "remarks": "Popopopopo",
-      "dateOfBirth": "1222-12-12",
-      "id": 6
+      "remarks": "...",
+      "dateOfBirth": "0022-12-12",
+      "id": 2
     }
   ],
   "flights": [
