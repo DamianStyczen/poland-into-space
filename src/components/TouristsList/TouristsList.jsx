@@ -1,5 +1,6 @@
 import React from "react";
-import DetailsWindow from "./detailsWindow.jsx";
+import TouristsTable from "../TouristsTable/ToursitsTable";
+import { HOST } from '../../constants';
 
 export default class TouristsList extends React.Component {
     constructor(props) {
@@ -14,37 +15,8 @@ export default class TouristsList extends React.Component {
     render() {
         return (
             <div>
-                {
-                    this.state.detailsWindow &&
-                    <DetailsWindow
-                        item={this.state.tourists.find(
-                            element => element.id == this.state.detailsId
-                        )}
-                    />
-                }
-                <table className="touristsTable">
-                    <thead>
-                        <tr>
-                            <th>Last name</th>
-                            <th>First name</th>
-                            <th> </th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.tourists.map(element => {
-                            return (
-                                <tr key={element.id}>
-                                    <td>{element.lastName}</td>
-                                    <td>{element.firstName}</td>
-                                    <td>
-                                        <button onClick={(e) => this.handleClick(e, element.id)}>Details</button>
-                                    </td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
+                <TouristsTable tourists={this.state.tourists} />
+
             </div>
         );
     }
@@ -56,11 +28,11 @@ export default class TouristsList extends React.Component {
         });
     };
     componentDidMount() {
-        fetch("http://localhost:3000/tourists")
+        fetch(`${HOST}/tourists`)
             .then(resp => resp.json())
-            .then(result => {
-                console.log("Fetched tourists:", result);
-                this.setState({ items: result });
+            .then(tourists => {
+                console.log("Fetched tourists:", tourists);
+                this.setState({ tourists });
             });
     }
 }

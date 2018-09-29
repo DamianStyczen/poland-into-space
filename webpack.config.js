@@ -14,10 +14,17 @@ module.exports = {
   mode: env,
   watch: true,
   devtool: "cheap-module-source-map",
+  devServer: {
+    port: 8080,
+    hot: true
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
+  },
   module: {
     rules: [{
       test: /\.jsx$/,
-      exclude: / node_modules /,
+      exclude: /node_modules/,
       use: {
         loader: "babel-loader",
         options: {
