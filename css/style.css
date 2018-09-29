@@ -1,15 +1,32 @@
-/* * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background: black;
 }
 .main-width {
   width: 1024px;
   min-height: 512px;
-  background: white;
   margin: auto;
 }
-h1 {
-  background: white;
-} */
+.touristsTable {
+  width: 100%;
+  line-height: 30px;
+  text-align: center;
+}
+.touristsTable thead {
+  background: pink;
+}
+.touristsTable tr {
+  border: 1px solid #000;
+}
+.touristsTable tbody > tr:nth-child(odd) {
+  background: rgb(231, 230, 230);
+}
+.details {
+  width: 50%;
+  height: 50%;
+  background: pink;
+  position: absolute;
+  left: 25%;
+  top: 25%;
+}

@@ -2,23 +2,59 @@
   "tourists": [
     {
       "id": 1,
-      "first-name": "Jan",
-      "last-name": "Nowak",
+      "firstName": "Jan",
+      "lastName": "Nowak",
       "gender": "Male",
       "country": "Poland",
       "remarks": "None",
-      "date-of-birth": "01-01-1960",
-      "list-of-flights": ""
+      "dateOfBirth": "01-01-1960",
+      "listOfFlights": ""
+    },
+    {
+      "id": 2,
+      "firstName": "Adam",
+      "lastName": "Smith",
+      "gender": "Male",
+      "country": "USA",
+      "remarks": "None",
+      "dateOfBirth": "03-06-1972",
+      "listOfFlights": ""
+    },
+    {
+      "id": 3,
+      "firstName": "Ewa",
+      "lastName": "Kowalczyk",
+      "gender": "Female",
+      "country": "Poland",
+      "remarks": "None",
+      "dateOfBirth": "12-06-1963",
+      "listOfFlights": ""
     }
   ],
   "flights": [
     {
       "id": 1,
-      "departure-date-and-time": "01-01-2018 20:00",
-      "arrival-date-and-time": "02-01-2018 06:00",
-      "no-of-seats": "Male",
-      "list-of-tourists": "Poland",
-      "ticket-price": "None"
+      "departureDateAndTime": "01-01-2018 20:00",
+      "arrivalDateAndTime": "02-01-2018 06:00",
+      "noOfSeats": "100",
+      "listOfTourists": [],
+      "ticketPrice": "1500"
+    },
+    {
+      "id": 2,
+      "departureDateAndTime": "12-03-2018 10:00",
+      "arrivalDateAndTime": "12-03-2018 20:00",
+      "noOfSeats": "120",
+      "listOfTourists": [],
+      "ticketPrice": "1400"
+    },
+    {
+      "id": 3,
+      "departureDateAndTime": "21-04-2018 04:00",
+      "arrivalDateAndTime": "21-04-2018 14:00",
+      "noOfSeats": "30",
+      "listOfTourists": [],
+      "ticketPrice": "5000"
     }
   ]
 }
