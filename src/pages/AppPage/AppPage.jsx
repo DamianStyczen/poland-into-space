@@ -11,19 +11,27 @@ import TouristsList from "../../pages/TouristsList/TouristsList";
 import NewTourist from "../NewTourist/NewTourist";
 import EditTourist from "../EditTourist/EditTourist";
 import FlightsList from "../../pages/FlightsList/FlightsList";
+import NavBar from "../../components/NavBar/NavBar";
+import FlightDetails from "../../pages/FlightDetails/FlightDetails";
+import EditFlight from "../../pages/EditFlight/EditFlight";
+import NewFlight from "../NewFlight/NewFlight";
 
 class AppPage extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1 className="text-center">Poland Into Space!</h1>
+        <NavBar />
         <HashRouter>
           <div>
             <Route exact path='/' component={TouristsList} />
-            <Route path='/details/:id' component={TouristDetails} />
-            <Route path='/create' component={NewTourist} />
-            <Route path='/edit/:id' component={EditTourist} />
-            <Route path='/flights' component={FlightsList} />
+            <Route exact path='/tourists' component={TouristsList} />
+            <Route path='/tourists/details/:id' component={TouristDetails} />
+            <Route path='/tourists/create' component={NewTourist} />
+            <Route path='/tourists/edit/:id' component={EditTourist} />
+            <Route exact path='/flights' component={FlightsList} />
+            <Route path='/flights/details/:id' component={FlightDetails} />
+            <Route path='/flights/edit/:id' component={EditFlight} />
+            <Route path='/flights/create' component={NewFlight} />
           </div>
         </HashRouter>
       </div>

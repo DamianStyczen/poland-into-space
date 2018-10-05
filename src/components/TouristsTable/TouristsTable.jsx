@@ -18,6 +18,7 @@ export default class TouristsTable extends React.Component {
             <table className="table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Last name</th>
                         <th>First name</th>
                         <th> </th>
@@ -27,17 +28,16 @@ export default class TouristsTable extends React.Component {
                     {
                         tourists.map(tourist => (
                             <tr key={tourist.id}>
+                                <td>{tourist.id}</td>
                                 <td>{tourist.lastName}</td>
                                 <td>{tourist.firstName}</td>
                                 <td>
-                                    <button type="button" className="btn btn-default btn-sm">
-                                        <span className="glyphicon glyphicon-eye-open"></span>
-                                        <Link to={`/details/${tourist.id}`}> Details</Link>
-                                    </button>
-                                    <button type="button" className="btn btn-default btn-sm">
-                                        <span className="glyphicon glyphicon-pencil"></span>
-                                        <Link to={`/edit/${tourist.id}`}> Edit</Link>
-                                    </button>
+                                    <Link to={`/tourists/details/${tourist.id}`} className="btn btn-default btn-sm">
+                                        <span className="glyphicon glyphicon-eye-open"></span> Details
+                                    </Link>
+                                    <Link to={`/tourists/edit/${tourist.id}`} className="btn btn-default btn-sm">
+                                        <span className="glyphicon glyphicon-pencil"></span> Edit
+                                    </Link>
                                     <button onClick={(e) => this.props.onDelete(tourist.id)} type="button" className="btn btn-default btn-sm">
                                         <span className="glyphicon glyphicon-trash"></span> Delete
                                     </button>

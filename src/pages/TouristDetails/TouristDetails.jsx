@@ -1,5 +1,6 @@
 import React from "react";
 import { HOST } from "../../constants";
+import { Link } from 'react-router-dom';
 
 export default class TouristDetails extends React.Component {
   constructor(props) {
@@ -26,19 +27,66 @@ export default class TouristDetails extends React.Component {
         this.setState({ tourist });
       });
   }
+  onDelete = id => {
+    fetch(`${HOST}/tourists/${id}`, {
+      method: "DELETE"
+    });
+
+  }
   render() {
-    const { firstName, lastName, gender, country, remarks, dateOfBirth, listOfFlights } = this.state.tourist;
+    const { id, firstName, lastName, gender, country, remarks, dateOfBirth, listOfFlights } = this.state.tourist;
 
     return (
-      <div className="details">
-        <div><span>Imie: {firstName}</span></div>
-        <div><span>Imie: {lastName}</span></div>
-        <div><span>Imie: {gender}</span></div>
-        <div><span>Imie: {country}</span></div>
-        <div><span>Imie: {firstName}</span></div>
-        <div><span>Imie: {remarks}</span></div>
-        <div><span>Imie: {dateOfBirth}</span></div>
-        <div><span>Imie: {listOfFlights}</span></div>
+      <div className="align-items-center">
+
+
+        <table className="table" style={{ maxWidth: 400 }}>
+          <thead>
+            <th>Tourist's details</th>
+            <th>
+              <Link to={`/tourists/edit/${id}`} className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-pencil"></span> Edit
+              </Link>
+              <button onClick={(e) => this.onDelete(id)} type="button" className="btn btn-default btn-sm">
+                <span className="glyphicon glyphicon-trash"></span> Delete
+        </button>
+            </th>
+          </thead>
+          <tbody>
+            <tr>
+              <th>ID:</th>
+              <td>{id}</td>
+            </tr>
+            <tr>
+              <th>First Name:</th>
+              <td>{firstName}</td>
+            </tr>
+            <tr>
+              <th>Last Name:</th>
+              <td>{lastName}</td>
+            </tr>
+            <tr>
+              <th>Gender:</th>
+              <td>{gender}</td>
+            </tr>
+            <tr>
+              <th>Country:</th>
+              <td>{country}</td>
+            </tr>
+            <tr>
+              <th>Date of Birth:</th>
+              <td>{dateOfBirth}</td>
+            </tr>
+            <tr>
+              <th>Remarks:</th>
+              <td>{remarks}</td>
+            </tr>
+            <tr>
+              <th>List of Flights:</th>
+              <td>{listOfFlights}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     );
   }

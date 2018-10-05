@@ -14,7 +14,9 @@ export default class TouristsList extends React.Component {
     render() {
         return (
             <div>
-                <Link to='/create'>Dodaj turystę</Link>
+                <Link to='tourists/create' className="btn btn-default btn-md">
+                    <span className="glyphicon glyphicon-plus"></span> Add new tourist
+                </Link>
                 <TouristsTable tourists={this.state.tourists} onDelete={this.onDelete} />
 
             </div>

@@ -1,14 +1,13 @@
 import React from 'react';
 import { HOST } from '../../constants';
 
-export default class NewTourist extends React.Component {
+export default class EditTourist extends React.Component {
     state = {
-        firstName: "",
-        lastName: "",
-        gender: "",
-        country: "",
-        remarks: "",
-        dateOfBirth: ""
+        departureDateAndTime: "",
+        arrivalDateAndTime: "",
+        noOfSeats: 0,
+        ticketPrice: 0,
+        listOfTourists: [],
     }
 
     componentDidMount() {

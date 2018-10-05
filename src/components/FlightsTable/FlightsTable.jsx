@@ -18,6 +18,7 @@ export default class FlightsTable extends React.Component {
             <table className="table">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Departure</th>
                         <th>Arrival</th>
                         <th>Ticket price</th>
@@ -28,17 +29,16 @@ export default class FlightsTable extends React.Component {
                     {
                         flights.map(flight => (
                             <tr key={flight.id}>
+                                <td>{flight.id}</td>
                                 <td>{flight.departureDateAndTime}</td>
                                 <td>{flight.arrivalDateAndTime}</td>
                                 <td>
-                                    <button type="button" className="btn btn-default btn-sm">
-                                        <span className="glyphicon glyphicon-eye-open"></span>
-                                        <Link to={`/flights/details/${flight.id}`}> Details</Link>
-                                    </button>
-                                    <button type="button" className="btn btn-default btn-sm">
-                                        <span className="glyphicon glyphicon-pencil"></span>
-                                        <Link to={`/flights/edit/${flight.id}`}> Edit</Link>
-                                    </button>
+                                    <Link to={`/flights/details/${flight.id}`} className="btn btn-default btn-sm">
+                                        <span className="glyphicon glyphicon-eye-open"></span> Details
+                                    </Link>
+                                    <Link to={`/flights/edit/${flight.id}`} className="btn btn-default btn-sm">
+                                        <span className="glyphicon glyphicon-pencil"></span> Edit
+                                    </Link>
                                     <button onClick={(e) => this.props.onDelete(flight.id)} type="button" className="btn btn-default btn-sm">
                                         <span className="glyphicon glyphicon-trash"></span> Delete
                                     </button>

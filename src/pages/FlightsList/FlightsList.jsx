@@ -14,7 +14,9 @@ export default class FligthsList extends React.Component {
     render() {
         return (
             <div>
-                <Link to='/create'>Add new flight</Link>
+                <Link to='flights/create' className="btn btn-default btn-md">
+                    <span className="glyphicon glyphicon-plus"></span> Add new flight
+                </Link>
                 <FlightsTable flights={this.state.flights} onDelete={this.onDelete} />
 
             </div>
