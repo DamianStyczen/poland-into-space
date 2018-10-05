@@ -3,12 +3,11 @@ import { HOST } from '../../constants';
 
 export default class NewFlight extends React.Component {
     state = {
-        firstName: "",
-        lastName: "",
-        gender: "",
-        country: "",
-        remarks: "",
-        dateOfBirth: ""
+        departureDateAndTime: "",
+        arrivalDateAndTime: "",
+        noOfSeats: 0,
+        ticketPrice: 0,
+        listOfTourists: []
     }
 
 
@@ -23,9 +22,13 @@ export default class NewFlight extends React.Component {
             },
             body: JSON.stringify(this.state)
         }).then(() => {
-            this.props.history.push('/')
+            this.props.history.push('/flights')
         });
 
+    }
+    onChange = e => {
+        const key = e.target.id;
+        this.setState({ [key]: e.target.value });
     }
 
     render() {

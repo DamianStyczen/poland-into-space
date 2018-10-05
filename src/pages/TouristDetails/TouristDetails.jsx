@@ -14,8 +14,9 @@ export default class TouristDetails extends React.Component {
         country: "",
         remarks: "",
         dateOfBirth: "",
-        listOfFlights: ""
-      }
+        listOfFlights: []
+      },
+      listOfFlights: []
     };
   }
   componentDidMount() {
@@ -25,7 +26,18 @@ export default class TouristDetails extends React.Component {
       .then(res => res.json())
       .then(tourist => {
         this.setState({ tourist });
-      });
+      }).then(() => {
+        this.state.tourist.listOfFlights.forEach(f => {
+          fetch(`${HOST}/flights/${f}`)
+            .then(res => res.json())
+            .then(flight => {
+              console.log(flight);
+              const newList = this.state.listOfFlights;
+              newList.push(flight);
+              this.setState({ listOfFlights: newList });
+            })
+        })
+      })
   }
   onDelete = id => {
     fetch(`${HOST}/tourists/${id}`, {
@@ -40,7 +52,7 @@ export default class TouristDetails extends React.Component {
       <div className="align-items-center">
 
 
-        <table className="table" style={{ maxWidth: 400 }}>
+        <table className="table" style={{ maxWidth: 600 }}>
           <thead>
             <th>Tourist's details</th>
             <th>
@@ -81,11 +93,40 @@ export default class TouristDetails extends React.Component {
               <th>Remarks:</th>
               <td>{remarks}</td>
             </tr>
-            <tr>
-              <th>List of Flights:</th>
-              <td>{listOfFlights}</td>
-            </tr>
           </tbody>
+        </table>
+
+        <table className="table">
+          <thead>
+            <tr>
+              <th>List of Flights</th>
+              <th>
+                <Link to='flight/create' className="btn btn-default btn-sm">
+                  <span className="glyphicon glyphicon-plus"></span> Add new flight
+                </Link>
+              </th>
+
+            </tr>
+            <tr>
+              <th>ID</th>
+              <th>Departure</th>
+              <th>Arrival</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.state.listOfFlights.map(flight => {
+              return (<tr>
+                <td>{flight.id}</td>
+                <td>{flight.departureDateAndTime}</td>
+                <td>{flight.arrivalDateAndTime}</td>
+                <button onClick={(e) => this.onFlightDelete(flights.id)} type="button" className="btn btn-default btn-sm">
+                  <span className="glyphicon glyphicon-trash"></span> Delete
+                                    </button>
+              </tr>)
+            })}
+          </tbody>
+
         </table>
       </div>
     );

@@ -32,6 +32,7 @@ export default class FlightsTable extends React.Component {
                                 <td>{flight.id}</td>
                                 <td>{flight.departureDateAndTime}</td>
                                 <td>{flight.arrivalDateAndTime}</td>
+                                <td>{flight.ticketPrice}</td>
                                 <td>
                                     <Link to={`/flights/details/${flight.id}`} className="btn btn-default btn-sm">
                                         <span className="glyphicon glyphicon-eye-open"></span> Details

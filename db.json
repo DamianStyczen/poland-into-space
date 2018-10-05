@@ -7,11 +7,16 @@
       "country": "Poland",
       "remarks": "Wants to be hired as Poland-Into-Space intern.",
       "dateOfBirth": "0001-11-11",
-      "id": 1
+      "id": 1,
+      "listOfFlights": [
+        1,
+        2,
+        3
+      ]
     },
     {
-      "firstName": "Kowalski",
-      "lastName": "Karol",
+      "firstName": "Adam",
+      "lastName": "Kowalski",
       "gender": "male",
       "country": "Polska",
       "remarks": "...",
@@ -19,22 +24,49 @@
       "id": 2
     },
     {
-      "firstName": "the Dog",
-      "lastName": "Pedro",
-      "gender": "male",
-      "country": "Spain",
-      "remarks": "He's a dog.",
-      "dateOfBirth": "2017-03-15",
-      "id": 3
-    },
-    {
-      "firstName": "Zaborska",
-      "lastName": "Ola",
+      "firstName": "Ola",
+      "lastName": "Zaborska",
       "gender": "female",
       "country": "Poland",
       "remarks": "Likes dogs.",
       "dateOfBirth": "1999-12-31",
       "id": 4
+    },
+    {
+      "firstName": "Pedro",
+      "lastName": "the Dog",
+      "gender": "male",
+      "country": "Spain",
+      "remarks": "He's a dog. Cool dog.",
+      "dateOfBirth": "2017-03-15",
+      "id": 5
+    },
+    {
+      "firstName": "Jan",
+      "lastName": "Nowak",
+      "gender": "male",
+      "country": "Poland",
+      "remarks": "",
+      "dateOfBirth": "1970-02-01",
+      "id": 6
+    },
+    {
+      "firstName": "Angelina",
+      "lastName": "Pitt",
+      "gender": "female",
+      "country": "USA",
+      "remarks": "",
+      "dateOfBirth": "1980-01-20",
+      "id": 7
+    },
+    {
+      "firstName": "Johnny",
+      "lastName": "Pitt",
+      "gender": "male",
+      "country": "USA",
+      "remarks": "",
+      "dateOfBirth": "1975-01-02",
+      "id": 8
     }
   ],
   "flights": [
@@ -43,16 +75,20 @@
       "departureDateAndTime": "01-01-2018 20:00",
       "arrivalDateAndTime": "02-01-2018 06:00",
       "noOfSeats": "100",
-      "listOfTourists": [],
+      "listOfTourists": [
+        1
+      ],
       "ticketPrice": "1500"
     },
     {
-      "id": 2,
-      "departureDateAndTime": "12-03-2018 10:00",
-      "arrivalDateAndTime": "12-03-2018 20:00",
-      "noOfSeats": "120",
-      "listOfTourists": [],
-      "ticketPrice": "1400"
+      "departureDateAndTime": "01-01-2019 20:00",
+      "arrivalDateAndTime": "02-01-2019 06:00",
+      "noOfSeats": "100",
+      "ticketPrice": "1500",
+      "listOfTourists": [
+        1
+      ],
+      "id": 2
     },
     {
       "id": 3,
@@ -61,6 +97,14 @@
       "noOfSeats": "30",
       "listOfTourists": [],
       "ticketPrice": "5000"
+    },
+    {
+      "departureDateAndTime": "06-06-2066 06:06",
+      "arrivalDateAndTime": "06-06-2066 18:06",
+      "noOfSeats": "66",
+      "ticketPrice": "660",
+      "listOfTourists": [],
+      "id": 4
     }
   ]
 }

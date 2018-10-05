@@ -23,7 +23,7 @@ export default class NewTourist extends React.Component {
             },
             body: JSON.stringify(this.state)
         }).then(() => {
-            this.props.history.push('/')
+            this.props.history.push('/tourists')
         });
 
     }
